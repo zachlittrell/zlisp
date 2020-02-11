@@ -19,6 +19,7 @@ Basic toy Lisp interpreter for fun over lunch breaks
 
 ## Current features
 * Anonymous closures with (fn (..) ...)
+* Optional typehints on parameters
 * Lexical scoping
 * Common functions such as map, get, def, do, cons, if
 * Objects can be one of 4 types: numbers (doubles), strings, functions, or pairs. 
