@@ -37,6 +37,10 @@ namespace eval {
 		addToLookupTable("fn", LambdaFunction::lambdaFunction());
 		addToLookupTable("nil?", isnil());
 		addToLookupTable("println", println());
+		addToLookupTable("mult", mult());
+		addToLookupTable("div", div());
+		addToLookupTable("mod", mod());
+		addToLookupTable("subtr", subtr());
 		addToLookupTable("add", add());
 		addToLookupTable("<", lessthan());
 		addToLookupTable(">", greaterthan());
