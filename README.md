@@ -1,5 +1,21 @@
 # zlisp
-Extremely basic Lisp interpreter for fun over lunch breaks
+Basic toy Lisp interpreter for fun over lunch breaks
+
+## Example code
+```clojure
+(def fibn 
+  (fn (n) 
+    (if (< n 2) 
+        n 
+       (add 
+         (fibn 
+           (add n -1))
+         (fibn
+           (add n -2))))))
+
+(map println 
+     (map fibn (list 0 1 2 3 4 5)))
+```
 
 ## Current features
 * Anonymous closures with (fn (..) ...)
