@@ -201,6 +201,7 @@
     <ClInclude Include="evaluator\zlisp_evaluator.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Examples\comments.lsp" />
     <None Include="Examples\fibonacci.lsp" />
     <None Include="Examples\reverse.lsp" />
     <None Include="Examples\typehinterrors.lsp" />

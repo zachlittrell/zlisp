@@ -23,7 +23,8 @@ namespace parse{
       case lex::INVALID:
       throw "Invalid token " + token.value + " at " + std::to_string(token.location);
       //Invalid token 
-
+      case lex::COMMENT:
+          break;
       case lex::LPAREN:
       tree.push(std::vector<std::shared_ptr<ASTNode>>());
       functionlocs.push(token.location);

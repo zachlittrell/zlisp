@@ -163,5 +163,6 @@
     <None Include="Examples\fibonacci.lsp" />
     <None Include="Examples\typehinterrors.lsp" />
     <None Include="Examples\reverse.lsp" />
+    <None Include="Examples\comments.lsp" />
   </ItemGroup>
 </Project>

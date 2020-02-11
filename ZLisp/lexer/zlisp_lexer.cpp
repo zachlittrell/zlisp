@@ -8,6 +8,8 @@
 #include <tuple>
 namespace lex{
 const std::vector<std::pair<std::string, int> > lexeme_to_lisp_token({
+
+  {R"(;;.*)", LispTokenType::COMMENT},
   {R"("(\.|[^\"\\])*")", LispTokenType::STR},
   {R"(-?\d+(\.\d+)?)",LispTokenType::NUM},
   {R"([A-Za-z_=<>^?-]+)",LispTokenType::SYM},

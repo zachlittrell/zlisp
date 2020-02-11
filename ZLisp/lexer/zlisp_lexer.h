@@ -16,6 +16,7 @@ enum LispTokenType{
   SYM,
   LPAREN,
   RPAREN,
+  COMMENT,
   INVALID
 };
 
