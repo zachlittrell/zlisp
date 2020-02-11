@@ -15,5 +15,6 @@ namespace eval{
     VARARG//This is for vararg functions
   };
  std::string const lispTypeName(LispType type);
+ LispType const stringToLispType(std::string& str);
 }
 #endif

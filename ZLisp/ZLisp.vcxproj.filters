@@ -161,5 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Examples\fibonacci.lsp" />
+    <None Include="Examples\typehinterrors.lsp" />
   </ItemGroup>
 </Project>

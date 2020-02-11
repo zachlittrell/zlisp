@@ -18,19 +18,41 @@ namespace eval {
 		if (args.size() < 2) throw "Lambda functions require a parameter list and body";
 		if (auto fncall = dynamic_cast<parse::FunctionCallNode*>(args[0].get())) {
 			std::vector<std::string> symbols;
+			std::vector<LispType> types;
+			LispType typehint = LispType::ANY;
+
 			if (auto param1 = dynamic_cast<parse::SymbolNode*>(fncall->head.get())) {
-				symbols.push_back(param1->symbol);
+				if (param1->symbol[0] == '^') {
+					auto typestr = param1->symbol.substr(1);
+					typehint = stringToLispType(typestr);
+				}
+				else {
+					symbols.push_back(param1->symbol);
+					types.push_back(typehint);
+				}
+
 				for (auto& node : fncall->arguments) {
 					if (auto param = dynamic_cast<parse::SymbolNode*>(node.get())) {
-						symbols.push_back(param->symbol);
+						if (param->symbol[0] == '^') {
+							//It's a typehint! 
+							auto typestr = param->symbol.substr(1);
+							typehint = stringToLispType(typestr);
+						}
+						else {
+							symbols.push_back(param->symbol);
+							types.push_back(typehint);
+							typehint = LispType::ANY;
+						}
 					}
 					else {
-						throw "Lambda function parameters must be symbols";
+						throw "Lambda function parameters must be symbols or typehints.";
 					}
 				}
-				std::vector<LispType> types(symbols.size());
+				if (types.size() == 0) {
+					//We got here because the parameters must have been all type hints
+					//In the current spec, that's fine.
+				}
 				std::vector<std::shared_ptr<parse::ASTNode>> body(args.begin()+1, args.end());
-				std::fill(types.begin(), types.end(), LispType::ANY);
 				const auto sz = body.size();
 				auto const& enclosedVars = closureVariables();
 				return LispVal(new Function(types, [symbols, body, enclosedVars,sz](auto& vec) {
