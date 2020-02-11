@@ -6,6 +6,9 @@
 #include <regex>
 #include <string>
 #include <vector>
+/**
+* A specialized lexer specifically for zlisp code
+*/
 namespace lex{
 enum LispTokenType{
   NUM,

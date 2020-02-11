@@ -5,7 +5,10 @@
 #include <vector>
 #include "..//evaluator/functions/lambda_function.h"
 #include <iostream>
-
+/**
+* An ASTNode for holding Function calls, or anything of the form
+* (head-function arg1 arg2 arg3)
+*/
 namespace parse{
 class FunctionCallNode : public ASTNode{
   public:

@@ -4,6 +4,9 @@
 #include "types.h"
 #include <vector>
 #include "../parser/astnode.h"
+/**
+* Convenience functions for evaluating an AST tree.
+**/
 namespace eval {
 
 	const LispVal eval(std::vector<std::shared_ptr<parse::ASTNode>>& tree);

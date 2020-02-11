@@ -2,6 +2,9 @@
 #define PARSER_ASTNODE_H
 #include "../evaluator/types.h"
 #include <iostream>
+/**
+* The parent ASTNode class for building an AST tree.
+*/
 namespace eval {
 	class LispVal;
 	class Function;

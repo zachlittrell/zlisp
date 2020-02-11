@@ -4,6 +4,9 @@
 #include "../evaluator/types.h"
 
 #include <iostream>
+/**
+* Node for holding a NUM LispVal.
+*/
 namespace parse{
   class NumNode : public ASTNode{
     public:

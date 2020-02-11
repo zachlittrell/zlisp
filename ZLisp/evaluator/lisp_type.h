@@ -1,6 +1,10 @@
 #ifndef EVALUATOR_LISP_TYPE_H
 #define EVALUATOR_LISP_TYPE_H
 #include <string>
+/**
+* Enum for possible types of LispVals.
+* This should likely be moved into types.h
+*/
 namespace eval{
  enum LispType{
     NUM,

@@ -5,6 +5,9 @@
 #include "../evaluator/functions/lambda_function.h"
 #include "..//evaluator/functions/def_function.h"
 #include <iostream>
+/**
+* Node for holding Symbols
+*/
 namespace parse{
   class SymbolNode : public ASTNode{
     public:

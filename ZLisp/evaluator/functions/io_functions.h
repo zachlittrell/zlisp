@@ -4,6 +4,9 @@
 
 #include "function.h"
 #include <functional>
+/**
+* Functions essential for I/O
+*/
 namespace eval {
 	const Function* println();
 

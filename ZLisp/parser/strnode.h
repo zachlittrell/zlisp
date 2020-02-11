@@ -3,6 +3,9 @@
 #include "astnode.h"
 #include "../evaluator/types.h"
 #include <iostream>
+/**
+* Node for holding Strings
+*/
 namespace parse{
   class StrNode : public ASTNode{
     public:

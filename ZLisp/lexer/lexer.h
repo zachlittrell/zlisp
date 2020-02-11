@@ -7,6 +7,9 @@
 #include <string>
 #ifndef LEXER_LEXER_H
 #define LEXER_LEXER_H
+/**
+* A generalized lexer/tokenizer class
+*/
 namespace lex{
 class Tokenizer{
 public:

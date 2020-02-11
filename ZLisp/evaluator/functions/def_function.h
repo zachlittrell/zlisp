@@ -2,6 +2,9 @@
 #include "function.h"
 #include "..//types.h"
 #include "..//..//parser/astnode.h"
+/**
+* Functions related to defining values
+*/
 namespace eval {
 	class DefFunction :
 		public Function

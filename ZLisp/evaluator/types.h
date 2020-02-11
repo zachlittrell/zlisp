@@ -5,6 +5,9 @@
 #include "functions/function.h"
 #include "lisp_type.h"
 #include <memory>
+/**
+* The basic unit of ZLisp. A LispVal represents one of four types: a num, a string, a function, or a pair.
+*/
 namespace parse {
 	class ASTNode;
 }

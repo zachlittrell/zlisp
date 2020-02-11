@@ -1,6 +1,9 @@
 #pragma once
 #include "function.h"
 #include "..//zlisp_evaluator.h"
+/**
+* Functions for creating and manipulating lists
+*/
 namespace eval {
 
 	const  Function* list();

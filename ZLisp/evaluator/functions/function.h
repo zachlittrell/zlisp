@@ -7,6 +7,9 @@
 #include "../types.h"
 #include <memory>
 #include "..//..//parser/astnode.h"
+/**
+* Basic function class that takes a function pointer and wraps it into a LispVal.
+*/
 namespace parse {
 	class ASTNode;
 };
