@@ -169,7 +169,6 @@
     <ClCompile Include="evaluator\functions\lambda_function.cpp" />
     <ClCompile Include="lexer\lexer.cpp" />
     <ClCompile Include="lexer\zlisp_lexer.cpp" />
-    <ClCompile Include="linkedlist.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="parser\astnode.cpp" />
     <ClCompile Include="parser\functioncallnode.cpp" />
@@ -193,7 +192,6 @@
     <ClInclude Include="evaluator\functions\lambda_function.h" />
     <ClInclude Include="lexer\lexer.h" />
     <ClInclude Include="lexer\zlisp_lexer.h" />
-    <ClInclude Include="linkedlist.h" />
     <ClInclude Include="parser\astnode.h" />
     <ClInclude Include="parser\functioncallnode.h" />
     <ClInclude Include="parser\numnode.h" />
@@ -201,6 +199,9 @@
     <ClInclude Include="parser\symbolnode.h" />
     <ClInclude Include="parser\zlisp_parser.h" />
     <ClInclude Include="evaluator\zlisp_evaluator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Examples\fibonacci.lsp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
