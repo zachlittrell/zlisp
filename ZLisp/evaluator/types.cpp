@@ -7,7 +7,7 @@
 #include "functions/function.h"
 #include <cstdlib>
 namespace eval{
-	LispVal::LispVal():LispVal((Function*)nullptr)  {
+	LispVal::LispVal(): LispVal((std::pair<LispVal,LispVal>*) nullptr){
 		
 	}
   LispVal const LispVal::NIL;
@@ -41,8 +41,18 @@ namespace eval{
 	  case LispType::FUNC:
 		  return other.getfunc() == getfunc();
 	  case LispType::PAIR: {
-		  std::pair p1 = *getpair();
-		  std::pair p2 = *other.getpair();
+		  auto ptr1 = getpair();
+		  auto ptr2 = other.getpair();
+          if (!ptr1) {
+              if (ptr2)
+                  return false;
+              return true;
+          }
+          else if (!ptr2) {
+              return false;
+          }
+          auto p1 = *ptr1;
+          auto p2 = *ptr2;
 		  return std::get<0>(p1).equal(std::get<0>(p2)) && std::get<1>(p1).equal(std::get<1>(p2));
 		 }
 	  }
@@ -69,7 +79,7 @@ namespace eval{
 	  switch (type) {
 	  case LispType::FUNC: {
 		  auto f = getfunc();
-		  if (f == nullptr) return "nil";
+
 		  return getfunc()->show();
 	  }
 	  
@@ -95,7 +105,12 @@ namespace eval{
       stream<<value.getfunc();
       break;
 	  case PAIR: {
-		  auto p = *value.getpair();
+          auto ptr = value.getpair();
+          if (!ptr) {
+              stream << "nil";
+              break;
+          }
+		  auto p = *ptr;
 		  stream << "(" << std::get<0>(p) << "," << std::get<1>(p) << ")";
 		  break;
 	  }
