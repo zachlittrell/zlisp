@@ -59,14 +59,14 @@ namespace eval {
 
 	const  LispVal get() {
 		const static LispVal v = eval(
-			"(fn (_list _i) (if (= 0 _i) (head _list) (get (tail _list) (add _i -1))))");
+			"(fn (^pair _list ^num _i) (if (= 0 _i) (head _list) (get (tail _list) (add _i -1))))");
 		return v;
 	}
 
 
 	const  LispVal map() {
 		const static LispVal v = eval(
-			"(fn (_f _l)  (if (nil? _l) nil (cons (_f (head _l)) (map _f (tail _l)))))");
+			"(fn (^func _f ^pair _l)  (if (nil? _l) nil (cons (_f (head _l)) (map _f (tail _l)))))");
 	
 		return v;
 	}
