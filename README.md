@@ -3,6 +3,7 @@ Basic toy Lisp interpreter for fun over lunch breaks
 
 ## Example code
 ```clojure
+;;Generates the nth Fibonacci number
 (def fibn 
   (fn (n) 
     (if (< n 2) 
@@ -19,10 +20,10 @@ Basic toy Lisp interpreter for fun over lunch breaks
 
 ## Current features
 * Anonymous closures with (fn (..) ...)
-* Optional typehints on parameters
+* Optional typehints/annotations on parameters
 * Lexical scoping
-* Common functions such as map, get, def, do, cons, if
-* Objects can be one of 4 types: numbers (doubles), strings, functions, or pairs. 
+* Common functions such as map, filter, iterate, def, do, cons, if...
+* Objects can be one of 4 types: numbers (doubles), strings, functions, or pairs
 
 
 ## TODO
