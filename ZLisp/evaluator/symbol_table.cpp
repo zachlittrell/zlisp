@@ -61,6 +61,12 @@ namespace eval {
 		addToLookupTable("tail", tail());
 		addToLookupTable("get", get());
 		addToLookupTable("map", map());
+		addToLookupTable("iterate", iterate());
+		addToLookupTable("reduce", reduce());
+		addToLookupTable("filter", filter());
+		addToLookupTable("concat", concat());
+		addToLookupTable("length", length());
+	
 	}
 	LispVal lookup(const std::string key) {
 		if (lookupTable.size() == 0) initializeLookupTable();

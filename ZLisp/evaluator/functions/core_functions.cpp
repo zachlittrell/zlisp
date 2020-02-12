@@ -11,6 +11,10 @@ namespace eval {
 	const LispVal isnil() {
 		return eval::eval("(fn (_x) (= _x nil))");
 	}
+	const LispVal comp() {
+		const static LispVal v = eval("(fn (^func _f ^func _g) (fn (_x) (f (g x))))");
+		return v;
+	}
 	/*
 	const Function* comp() {
 		const static Function* comp = new Function({ LispType::FUNC,LispType::FUNC }, [](std::vector<LispVal>& v) {return new Function({ LispType::ANY }, [](auto& v2) {return  });

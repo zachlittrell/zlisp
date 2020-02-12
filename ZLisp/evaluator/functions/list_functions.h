@@ -17,8 +17,13 @@ namespace eval {
 
 	const  LispVal get();
 	const  LispVal map();
-
+	const LispVal concat();
+	const LispVal iterate();
+	const LispVal reduce();
+	const LispVal filter();
 	
+
+	const LispVal length();
 
 
 }

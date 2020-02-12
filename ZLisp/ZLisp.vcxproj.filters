@@ -164,5 +164,6 @@
     <None Include="Examples\typehinterrors.lsp" />
     <None Include="Examples\reverse.lsp" />
     <None Include="Examples\comments.lsp" />
+    <None Include="Examples\listprocessing-demo.lsp" />
   </ItemGroup>
 </Project>

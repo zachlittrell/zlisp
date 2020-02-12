@@ -71,6 +71,39 @@ namespace eval {
 		return v;
 	}
 
+	const LispVal reduce() {
+		const static LispVal v = eval(
+			"(fn (^func _f _init _l) (if (nil? _l) _init (reduce _f (_f _init (head _l)) (tail _l))))"
+		);
+		return v;
+	}
+
+	const LispVal iterate() {
+		const static LispVal v = eval(
+			"(fn (^func _f _init ^num n) (if (= 0 n) (list _init) (cons _init (iterate _f (_f _init) (add n -1)))))"
+		);
+		return v;
+	}
+
+	const LispVal concat() {
+		const static LispVal v = eval(
+			"(fn (^pair l1 ^pair l2) (if (nil? l1) l2 (cons (head l1) (concat (tail l1) l2))))"
+		);
+		return v;
+	}
+	const LispVal filter() {
+		const static LispVal v = eval(
+			"(fn (^func f ^pair l) (if (nil? l) nil (if (f (head l)) (cons (head l) (filter f (tail l))) (filter f (tail l)))))"
+		);
+		return v;
+	}
+
+	const LispVal length() {
+		const static LispVal v = eval(
+			"(fn (^pair l) (if (nil? l) 0 (add 1 (length (tail l)))))"
+		);
+		return v;
+	}
 
 
 
