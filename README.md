@@ -23,6 +23,7 @@ Basic toy Lisp interpreter for fun over lunch breaks
 * Optional typehints/annotations on parameters
 * Lexical scoping
 * Common functions such as map, filter, iterate, def, do, cons, if...
+* Basic stack trace/error messaging
 * Objects can be one of 4 types: numbers (doubles), strings, functions, or pairs
 
 

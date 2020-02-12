@@ -166,4 +166,9 @@
     <None Include="Examples\comments.lsp" />
     <None Include="Examples\listprocessing-demo.lsp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Examples\stacktracetest.lsp">
+      <Filter>Source Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

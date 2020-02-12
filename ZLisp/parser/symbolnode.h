@@ -4,6 +4,7 @@
 #include "../evaluator/types.h"
 #include "../evaluator/functions/lambda_function.h"
 #include "..//evaluator/functions/def_function.h"
+#include "functioncallnode.h"
 #include <iostream>
 /**
 * Node for holding Symbols
@@ -19,6 +20,7 @@ namespace parse{
      const std::string symbol;
 	 friend class eval::LambdaFunction;
 	 friend class eval::DefFunction;
+     friend class FunctionCallNode;
   };
 }
 #endif

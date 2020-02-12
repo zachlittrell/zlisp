@@ -17,6 +17,7 @@ class FunctionCallNode : public ASTNode{
   virtual  void show(std::ostream& stream) const;
   virtual eval::LispVal evaluate();
   private:
+      void appendstacktrace(std::string& err);
   std::shared_ptr<ASTNode> head;
   const std::vector<std::shared_ptr<ASTNode>> arguments; 
   friend class eval::LambdaFunction;

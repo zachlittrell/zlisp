@@ -167,6 +167,9 @@
     <ClCompile Include="evaluator\types.cpp" />
     <ClCompile Include="evaluator\functions\if_function.cpp" />
     <ClCompile Include="evaluator\functions\lambda_function.cpp" />
+    <Text Include="Examples\stacktracetest.lsp">
+      <FileType>CppCode</FileType>
+    </Text>
     <ClCompile Include="lexer\lexer.cpp" />
     <ClCompile Include="lexer\zlisp_lexer.cpp" />
     <ClCompile Include="main.cpp" />

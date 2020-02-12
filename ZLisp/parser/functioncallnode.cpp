@@ -4,6 +4,7 @@
 #include "..//evaluator/symbol_table.h"
 #include <vector>
 #include <iostream>
+#include "symbolnode.h"
 namespace parse{
   FunctionCallNode::FunctionCallNode(const int location, const std::vector<std::shared_ptr<ASTNode>>& args):
 	  ASTNode(location),//,
@@ -21,8 +22,32 @@ namespace parse{
 	  if (head_.type != eval::LispType::FUNC) {
 		  throw "Cannot call as function:" + head_.type;
 	  }
-	  return head_.getfunc()->evaluate(arguments);
+	  try {
+		  auto returnobj = head_.getfunc()->evaluate(arguments);
+		  return returnobj;
+	  }
+	  catch (const char* err) {
+		  std::string newerr(err);
+		  appendstacktrace(newerr);
+		  throw newerr;
+	  }
+	  catch (std::string err) {
+		  appendstacktrace(err);
+		  throw err;
+
+	  }
    }
+  const std::string anonymous_func_name("anonymous function");
+  void FunctionCallNode::appendstacktrace(std::string& err) {
+	  const std::string* name;
+	  if (auto symnode = dynamic_cast<SymbolNode*>(head.get())) {
+		   name = &(symnode->symbol);
+	  }
+	  else {
+		  name = &anonymous_func_name;
+	  }
+	  err.append("\nIn call to ").append(*name).append(":").append(std::to_string(location));
+  }
 
    void  FunctionCallNode::show(std::ostream& stream) const {
 	  stream << "FunctionCallNode(";
