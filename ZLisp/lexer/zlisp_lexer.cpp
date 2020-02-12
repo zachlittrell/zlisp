@@ -12,7 +12,7 @@ const std::vector<std::pair<std::string, int> > lexeme_to_lisp_token({
   {R"(;;.*)", LispTokenType::COMMENT},
   {R"("(\.|[^\"\\])*")", LispTokenType::STR},
   {R"(-?\d+(\.\d+)?)",LispTokenType::NUM},
-  {R"([A-Za-z_=<>^?-]+)",LispTokenType::SYM},
+  {R"([A-Za-z_=<>^?-][A-Za-z_=<>^?0-9-]*)",LispTokenType::SYM},
   {R"(\()",LispTokenType::LPAREN},
   {R"(\))",LispTokenType::RPAREN},
   {R"(\S+)",LispTokenType::INVALID}
